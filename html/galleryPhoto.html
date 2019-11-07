@@ -12,11 +12,15 @@
     <script type='text/javascript' src='../node_modules/unitegallery/dist/themes/grid/ug-theme-grid.js'></script>
     <link rel='stylesheet' href='../node_modules/unitegallery/dist/themes/default/ug-theme-default.css' type='text/css' />
     <script type='text/javascript' src='../node_modules/unitegallery/dist/themes/carousel/ug-theme-carousel.js'></script>
+    <script type='text/javascript' src='../node_modules/unitegallery/dist/themes/tiles/ug-theme-tiles.js'></script>
+    <script type='text/javascript' src='../node_modules/unitegallery/dist/themes/slider/ug-theme-slider.js'></script>
+    <script type='text/javascript' src='../node_modules/unitegallery/dist/themes/tilesgrid/ug-theme-tilesgrid.js'></script>
+
     <!--<script src="../node_modules/jquery/dist/jquery.min.js"></script>-->
 
     <style>
         body {
-            background-color: #111111;
+            background-color: #962E40;
         }
 
         #gallery {
@@ -27,13 +31,66 @@
             width: 100%;
         }
 
+        #gallery2 {
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: auto;
+            margin-top: 130px;
+            width: 100%;
+        }
+
+        #gallery3 {
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: auto;
+            margin-top: 130px;
+            width: 100%;
+        }
+
+        #gallery4 {
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: auto;
+            margin-top: 130px;
+            width: 100%;
+        }
+
+        #gallery5 {
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: auto;
+            margin-top: 130px;
+            width: 100%;
+        }
+
+        #gallery6 {
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: auto;
+            margin-top: 130px;
+            width: 100%;
+        }
+
+        #gallery7 {
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: auto;
+            margin-top: 130px;
+            width: 100%;
+        }
+
         #title {
             padding-top: 50px;
             text-align: center;
-            color: white;
+            color: #FF9D00;
             font-family: cursive;
             font-size: 60px;
             font-weight: bold;
+        }
+        
+        #bouttons {
+            padding-top: 70px;
+            text-align: center;
         }
     </style>
 
@@ -42,9 +99,16 @@
 <body>
 
     <h1 id="title">Gallery photo</h1>
-
-    <button id="grid">Mode Grid</button>
-    <button id="carousel">Mode Carousel</button>
+    
+    <div id="bouttons">
+        <button id="grid" class="btn btn-warning btn-lg">Mode Grid</button>
+        <button id="carousel" class="btn btn-warning btn-lg">Mode Carousel</button>
+        <button id="tilesCol" class="btn btn-warning btn-lg">Mode Tiles Columns</button>
+        <button id="tilesJus" class="btn btn-warning btn-lg">Mode Tiles Justified</button>
+        <button id="tilesNes" class="btn btn-warning btn-lg">Mode Tiles Nested</button>
+        <button id="tilesGri" class="btn btn-warning btn-lg">Mode Tiles Grid</button>
+        <button id="slider" class="btn btn-warning btn-lg">Mode Slider</button>
+    </div>
 
     <div id="gallery" style="display:none;">
 
@@ -72,20 +136,278 @@
 
     </div>
 
+
+    <div id="gallery2" style="display:none;">
+
+        <img alt="Fontainebleau" src="../images/castle-fontainebleau.jpg" data-description="Chateau de Fontainebleau">
+
+        <img alt="Bathroom" src="../images/bathroom.jpg" data-description="Salle de bain">
+
+        <img alt="Chenonceau" src="../images/chateau-de-chenonceau.jpg" data-description="Chateau de Chenonceau">
+
+        <img alt="Chûte" src="../images/falls.jpg" data-description="Chûte d'eau">
+
+        <img alt="Gallery1" src="../images/gallery1.jpg" data-description="Gallery de musée">
+
+        <img alt="Gallery2" src="../images/gallery2.jpg" data-description="Gallery de musée">
+
+        <img alt="Istanbul" src="../images/istanbul.jpg" data-description="Panorama Istanbul">
+
+        <img alt="Pinacoteca" src="../images/pinacoteca-di-brera.jpg" data-description=".....">
+
+        <img alt="Sculture" src="../images/sculpture.jpg" data-description="Sculture">
+
+        <img alt="Le Louvre" src="../images/the-louvre.jpg" data-description="Le louvre">
+
+        <img alt="Venaria" src="../images/venaria-reale.jpg" data-description="...">
+
+    </div>
+
+    <div id="gallery3" style="display:none;">
+
+        <img alt="Fontainebleau" src="../images/castle-fontainebleau.jpg" data-description="Chateau de Fontainebleau">
+
+        <img alt="Bathroom" src="../images/bathroom.jpg" data-description="Salle de bain">
+
+        <img alt="Chenonceau" src="../images/chateau-de-chenonceau.jpg" data-description="Chateau de Chenonceau">
+
+        <img alt="Chûte" src="../images/falls.jpg" data-description="Chûte d'eau">
+
+        <img alt="Gallery1" src="../images/gallery1.jpg" data-description="Gallery de musée">
+
+        <img alt="Gallery2" src="../images/gallery2.jpg" data-description="Gallery de musée">
+
+        <img alt="Istanbul" src="../images/istanbul.jpg" data-description="Panorama Istanbul">
+
+        <img alt="Pinacoteca" src="../images/pinacoteca-di-brera.jpg" data-description=".....">
+
+        <img alt="Sculture" src="../images/sculpture.jpg" data-description="Sculture">
+
+        <img alt="Le Louvre" src="../images/the-louvre.jpg" data-description="Le louvre">
+
+        <img alt="Venaria" src="../images/venaria-reale.jpg" data-description="...">
+
+    </div>
+
+    <div id="gallery4" style="display:none;">
+
+        <img alt="Fontainebleau" src="../images/castle-fontainebleau.jpg" data-description="Chateau de Fontainebleau">
+
+        <img alt="Bathroom" src="../images/bathroom.jpg" data-description="Salle de bain">
+
+        <img alt="Chenonceau" src="../images/chateau-de-chenonceau.jpg" data-description="Chateau de Chenonceau">
+
+        <img alt="Chûte" src="../images/falls.jpg" data-description="Chûte d'eau">
+
+        <img alt="Gallery1" src="../images/gallery1.jpg" data-description="Gallery de musée">
+
+        <img alt="Gallery2" src="../images/gallery2.jpg" data-description="Gallery de musée">
+
+        <img alt="Istanbul" src="../images/istanbul.jpg" data-description="Panorama Istanbul">
+
+        <img alt="Pinacoteca" src="../images/pinacoteca-di-brera.jpg" data-description=".....">
+
+        <img alt="Sculture" src="../images/sculpture.jpg" data-description="Sculture">
+
+        <img alt="Le Louvre" src="../images/the-louvre.jpg" data-description="Le louvre">
+
+        <img alt="Venaria" src="../images/venaria-reale.jpg" data-description="...">
+
+    </div>
+
+    <div id="gallery5" style="display:none;">
+
+        <img alt="Fontainebleau" src="../images/castle-fontainebleau.jpg" data-description="Chateau de Fontainebleau">
+
+        <img alt="Bathroom" src="../images/bathroom.jpg" data-description="Salle de bain">
+
+        <img alt="Chenonceau" src="../images/chateau-de-chenonceau.jpg" data-description="Chateau de Chenonceau">
+
+        <img alt="Chûte" src="../images/falls.jpg" data-description="Chûte d'eau">
+
+        <img alt="Gallery1" src="../images/gallery1.jpg" data-description="Gallery de musée">
+
+        <img alt="Gallery2" src="../images/gallery2.jpg" data-description="Gallery de musée">
+
+        <img alt="Istanbul" src="../images/istanbul.jpg" data-description="Panorama Istanbul">
+
+        <img alt="Pinacoteca" src="../images/pinacoteca-di-brera.jpg" data-description=".....">
+
+        <img alt="Sculture" src="../images/sculpture.jpg" data-description="Sculture">
+
+        <img alt="Le Louvre" src="../images/the-louvre.jpg" data-description="Le louvre">
+
+        <img alt="Venaria" src="../images/venaria-reale.jpg" data-description="...">
+
+    </div>
+
+    <div id="gallery6" style="display:none;">
+
+        <img alt="Fontainebleau" src="../images/castle-fontainebleau.jpg" data-description="Chateau de Fontainebleau">
+
+        <img alt="Bathroom" src="../images/bathroom.jpg" data-description="Salle de bain">
+
+        <img alt="Chenonceau" src="../images/chateau-de-chenonceau.jpg" data-description="Chateau de Chenonceau">
+
+        <img alt="Chûte" src="../images/falls.jpg" data-description="Chûte d'eau">
+
+        <img alt="Gallery1" src="../images/gallery1.jpg" data-description="Gallery de musée">
+
+        <img alt="Gallery2" src="../images/gallery2.jpg" data-description="Gallery de musée">
+
+        <img alt="Istanbul" src="../images/istanbul.jpg" data-description="Panorama Istanbul">
+
+        <img alt="Pinacoteca" src="../images/pinacoteca-di-brera.jpg" data-description=".....">
+
+        <img alt="Sculture" src="../images/sculpture.jpg" data-description="Sculture">
+
+        <img alt="Le Louvre" src="../images/the-louvre.jpg" data-description="Le louvre">
+
+        <img alt="Venaria" src="../images/venaria-reale.jpg" data-description="...">
+
+    </div>
+
+    <div id="gallery7" style="display:none;">
+
+        <img alt="Fontainebleau" src="../images/castle-fontainebleau.jpg" data-description="Chateau de Fontainebleau">
+
+        <img alt="Bathroom" src="../images/bathroom.jpg" data-description="Salle de bain">
+
+        <img alt="Chenonceau" src="../images/chateau-de-chenonceau.jpg" data-description="Chateau de Chenonceau">
+
+        <img alt="Chûte" src="../images/falls.jpg" data-description="Chûte d'eau">
+
+        <img alt="Gallery1" src="../images/gallery1.jpg" data-description="Gallery de musée">
+
+        <img alt="Gallery2" src="../images/gallery2.jpg" data-description="Gallery de musée">
+
+        <img alt="Istanbul" src="../images/istanbul.jpg" data-description="Panorama Istanbul">
+
+        <img alt="Pinacoteca" src="../images/pinacoteca-di-brera.jpg" data-description=".....">
+
+        <img alt="Sculture" src="../images/sculpture.jpg" data-description="Sculture">
+
+        <img alt="Le Louvre" src="../images/the-louvre.jpg" data-description="Le louvre">
+
+        <img alt="Venaria" src="../images/venaria-reale.jpg" data-description="...">
+
+    </div>
+
     <script>
+
         $(document).ready(function() {
 
+            var div;
+            var gal7 = $("#gallery7");
+            var gal6 = $("#gallery6");
+            var gal5 = $("#gallery5");
+            var gal4 = $("#gallery4");
+            var gal3 = $("#gallery3");
+            var gal2 = $("#gallery2");
+            var gal = $("#gallery");
+
+
             $("#grid").on("click", function() {
+                //$("#gallery").appendTo("body");
+                $("body").append(gal);
+                gal2.detach();
+                gal3.detach();
+                gal4.detach();
+                gal5.detach();
+                gal6.detach();
+                gal7.detach();
                 $("#gallery").unitegallery({
                     gallery_theme: "grid",
                     theme_panel_position: "right"
                 });
             });
+
             $("#carousel").on("click", function() {
-                $("#gallery").unitegallery({
+                //$("#gallery").appendTo("body");
+                $("body").append(gal2);
+                gal.detach();
+                gal3.detach();
+                gal4.detach();
+                gal5.detach();
+                gal7.detach();
+                gal6.detach();
+                $("#gallery2").unitegallery({
                     gallery_theme: "carousel"
                 });
             });
+
+            $("#tilesCol").on("click", function() {
+                //$("#gallery").appendTo("body");
+                $("body").append(gal3);
+                gal.detach();
+                gal2.detach();
+                gal4.detach();
+                gal5.detach();
+                gal6.detach();
+                gal7.detach();
+                $("#gallery3").unitegallery({
+                    gallery_theme: "tiles"
+                });
+            });
+
+            $("#tilesJus").on("click", function() {
+                //$("#gallery").appendTo("body");
+                $("body").append(gal4);
+                gal.detach();
+                gal2.detach();
+                gal3.detach();
+                gal5.detach();
+                gal6.detach();
+                gal7.detach();
+                $("#gallery4").unitegallery({
+                    gallery_theme: "tiles",
+                    tiles_type: "justified"
+                });
+            });
+
+            $("#tilesNes").on("click", function() {
+                //$("#gallery").appendTo("body");
+                $("body").append(gal5);
+                gal.detach();
+                gal2.detach();
+                gal4.detach();
+                gal3.detach();
+                gal6.detach();
+                gal7.detach();
+                $("#gallery5").unitegallery({
+                    gallery_theme: "tiles",
+                    tiles_type: "nested"
+                });
+            });
+
+            $("#tilesGri").on("click", function() {
+                //$("#gallery").appendTo("body");
+                $("body").append(gal6);
+                gal.detach();
+                gal2.detach();
+                gal4.detach();
+                gal3.detach();
+                gal5.detach();
+                gal7.detach();
+                $("#gallery6").unitegallery({
+                    gallery_theme: "tilesgrid"
+                });
+            });
+
+            $("#slider").on("click", function() {
+                //$("#gallery").appendTo("body");
+                $("body").append(gal7);
+                gal.detach();
+                gal2.detach();
+                gal4.detach();
+                gal3.detach();
+                gal5.detach();
+                gal6.detach();
+                $("#gallery7").unitegallery({
+                    gallery_theme: "slider"
+                });
+            });
+
         });
     </script>
 
