@@ -12,24 +12,30 @@
         ul {
             list-style: none;
         }
+
         #header {
             text-align: center;
             font-size: 25px;
-            width: 49%;
+            width: 24%;
         }
+
         body {
             background-color: darkgray;
         }
+
         #mouseEnter {
             background-color: darkgray;
         }
     </style>
 
     <script>
-        function Book(title, author) {
+        function Book(title, author, genre, editor) {
             this.title = title;
             this.author = author;
+            this.genre = genre;
+            this.editor = editor;
         }
+
         Book.prototype.validate = function() {
             var valid = true;
             if (this.title.trim() == "") {
@@ -40,53 +46,77 @@
                 valid = false;
                 this.errorMessage = "L'auteur ne peut être vide";
             }
+            if (this.genre.trim() == "") {
+                valid = false;
+                this.errorMessage = "Le genre ne peut être vide";
+            }
+            if (this.editor.trim() == "") {
+                valid = false;
+                this.errorMessage = "L'éditeur ne peut être vide";
+            }
             // Il ne peut y avoir de doublon de livre
             var titleToAdd = this.title;
-            var bookExists = bookList.some(function(item){
+            var bookExists = bookList.some(function(item) {
                 return item.title == titleToAdd;
             })
-            
-            if(bookExists){
+
+            if (bookExists) {
                 valid = false;
                 this.errorMessage = "Ce livre existe déjà";
             }
             return valid;
         }
+
         renderTableRowHeader = function() {
             //création de la ligne
             var $rowHead = $("<tr></tr");
             //creation de la case pour l'en tete
             var $enTeteTitle = $("<th id='header'></th>");
             var $enTeteAuthor = $("<th id='header'></th>");
+            var $enTeteGenre = $("<th id='header'></th>");
+            var $enTeteEditor = $("<th id='header'></th>");
             //remplissage de l'en tete
             $enTeteTitle.text("Livres");
             $enTeteAuthor.text("Auteurs");
+            $enTeteGenre.text("Genres");
+            $enTeteEditor.text("Editeurs");
             //ajout de la case dans la ligne
             $rowHead.append($enTeteTitle);
             $rowHead.append($enTeteAuthor);
+            $rowHead.append($enTeteGenre);
+            $rowHead.append($enTeteEditor);
             return $rowHead;
         }
+
         Book.prototype.renderTableRow = function() {
             //création de la ligne
             var $row = $("<tr></tr");
             //creation de la case pour le titre
             var $titreCell = $("<td id='cellTitle'></td>");
             var $authorCell = $("<td id='cellAuthor'></td>");
+            var $genreCell = $("<td id='cellGenre'></td>");
+            var $editorCell = $("<td id='cellEditor'></td>");
             //remplissage du titre
             $titreCell.text(this.title);
             $authorCell.text(this.author);
+            $genreCell.text(this.genre);
+            $editorCell.text(this.editor);
             //ajout de la case dans la ligne
             $row.append($titreCell);
             $row.append($authorCell);
+            $row.append($genreCell);
+            $row.append($editorCell);
             return $row;
         }
+
         var bookList = [];
         //|| window.localStorage.getItem("bookList");
         //recupération des données éventuelles stockée en LocalStorage
         var data = JSON.parse(window.localStorage.getItem("bookList")) || [];
         for (let item of data) {
-            bookList.push(new Book(item.title , item.author));
+            bookList.push(new Book(item.title, item.author, item.genre, item.editor));
         }
+
         renderTable = function() {
             var $table = $("<table class='table table-bordered table-striped table-dark' id='books'></table");
             $table.append(renderTableRowHeader());
@@ -97,6 +127,7 @@
             //Ajout de la table au DOM
             $("body").append($table);
         }
+
         $(document).ready(function() {
             //Affichage des livres
             renderTable();
@@ -110,8 +141,10 @@
                 e.preventDefault(); //Annulation de l'envoi du formulaire dans notre cas car pas définit
                 var title = $("#title").val();
                 var author = $("#author").val();
+                var genre = $("#genre").val();
+                var editor = $("#editor").val();
                 //construction d'une instance de livre
-                var book = new Book(title, author);
+                var book = new Book(title, author, genre, editor);
                 console.log(book.title);
                 console.log(book.author);
                 if (book.validate()) {
@@ -124,6 +157,10 @@
                     $("#author").focus();
                     $("#title").val("");
                     $("#title").focus();
+                    $("#genre").val("");
+                    $("#genre").focus();
+                    $("#editor").val("");
+                    $("#editor").focus();
                     //ajout d'une ligne au tableau
                     $("#books").append(book.renderTableRow());
                     //Ajout du livre au localStorage
@@ -137,6 +174,10 @@
                     $("#title").focus();
                     $("#author").val("");
                     $("#author").focus();
+                    $("#genre").val("");
+                    $("#genre").focus();
+                    $("#editor").val("");
+                    $("#editor").focus();
                 }
                 $("td").on("mouseenter", function() {
                     $(this).css("background-color", "darkgray");
@@ -148,12 +189,12 @@
                     //récupération du titre du livre à supprimer
                     var bookTitle = $(this).children().first().text();
                     //Recherche de la position dans le tableau bookList
-                    var index = bookList.findIndex(function(book){
-                       return bookTitle == book.title; 
+                    var index = bookList.findIndex(function(book) {
+                        return bookTitle == book.title;
                     });
                     //Suppression du livre dans le tableau bookList
                     bookList.splice(index, 1);
-                    
+
                     //console.log(index);
                     //console.log(bookTitle);
                     console.log(bookList);
@@ -178,10 +219,20 @@
             <form method="post" id="form">
                 <div class="form-group">
 
-                    <label for="title"></label>
-                    <input type="text" id="title" class="form-control" placeholder="saisir titre">
-                    <label for="author"></label>
-                    <input type="text" id="author" class="form-control" placeholder="saisir auteur">
+                    <div id="firstGroup">
+
+                        <label for="title"></label>
+                        <input type="text" id="title" class="form-control" placeholder="saisir titre">
+                        <label for="author"></label>
+                        <input type="text" id="author" class="form-control" placeholder="saisir auteur">
+                    </div>
+                    <div id="secondGroup">
+                       
+                        <label for="genre"></label>
+                        <input type="text" id="genre" class="form-control" placeholder="saisir genre">
+                        <label for="editor"></label>
+                        <input type="text" id="editor" class="form-control" placeholder="saisir éditeur">
+                    </div>
                 </div>
                 <button class="btn btn-dark btn-block" type="submit">Valider</button>
             </form>
